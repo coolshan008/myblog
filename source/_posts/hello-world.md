@@ -1,10 +1,11 @@
 ---
 title: 这是一块碑
+tags: 折腾
 ---
 
 ### 闲话
 之前使用动态博客，没过多久就迷上了静态博客。拜倒在markdown的简单粗暴上。
-借着新浪云开始剥削的契机，同时借着鹅厂云1月包月VPS的春风，赶紧又弄了个新博客。立此碑。
+借着新浪云开始剥削的契机，同时借着鹅厂云1元包月VPS的春风，赶紧又弄了个新博客。立此碑。
 
 
 ### 关于http服务的端口
@@ -31,4 +32,4 @@ events{
 > ginx -s reload is only used to tell a running nginx process to reload its config. After a stop, you don't have a running nginx process to send a signal to. Just run nginx (possibly with a -c /path/to/config/file)
 
 
-~~**我就是那种第一篇hello,world都要加内容谨言boy+小菜机。**~~
+~~**我就是那种第一篇hello,world都要加内容慎言boy+小菜机。**~~
