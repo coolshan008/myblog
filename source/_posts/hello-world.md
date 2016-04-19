@@ -1,38 +1,34 @@
 ---
-title: Hello World
+title: 这是一块碑
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+####闲话
+之前使用动态博客，没过多久就迷上了静态博客。拜倒在markdown的简单粗暴上。
+借着新浪云开始剥削的契机，同时借着鹅厂云1月包月VPS的春风，赶紧又弄了个新博客。立此碑。
 
-### Create a new post
 
-``` bash
-$ hexo new "My New Post"
+####关于http服务的端口
+默认的端口是80,由于系统的限制，各路框架都不能选用这个端口。于是催生了一系列改iptables的方案。此法过于粗暴，**我不喜欢**。其实nginx能够很好的通过端口代理解决这个问题。配置如下：
+
 ```
+http{
+	server{
+		location /{
+			proxy_pass http://localhost:yourpost;
+		}
+	}
+}
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
+events{
+	worker_connections 1024;
+}
 ```
+然后就能通过80端口访问你指定的端口了。
 
-More info: [Server](https://hexo.io/docs/server.html)
+#####nginx重启的小问题
+把nginx进程杀死后，pid丢失，下次重启Nginx,无法通过-s reload开启服务。
+解决方案：
+> ginx -s reload is only used to tell a running nginx process to reload its config. After a stop, you don't have a running nginx process to send a signal to. Just run nginx (possibly with a -c /path/to/config/file)
 
-### Generate static files
 
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+~~**我就是那种第一篇hello,world都要加内容谨言boy+小菜机。**~~
