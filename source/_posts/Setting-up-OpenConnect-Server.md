@@ -27,7 +27,6 @@ $ cd certificates
 ```
 
   - CA模板，创建ca.tmpl，按需填写，这里的cn和organization可以随便填。
-
 ```
 cn = "Your CA name" 
 organization = "Your fancy name" 
